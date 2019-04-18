@@ -50,7 +50,7 @@ if discord.version_info.major == 1:
 
             await cur.close()
         
-        conn.close()
+        await conn.close()
 
     @client.command()
     @commands.cooldown(1, config["general"]["command-cooldown"], commands.BucketType.user)
@@ -129,7 +129,7 @@ if discord.version_info.major == 1:
                                 await cur.close()
                                 
             session_object.close
-            conn.close()
+            await conn.close()
         else:
             await ctx.send(translations[language]["rank-command-incorrect-format"].format(ctx.author.id, config["general"]["prefix"]))
 
