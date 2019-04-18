@@ -9,7 +9,6 @@
         "top-message": "**Score:** {}\n**Kills:** {}\n**Deaths:** {}\n{}",
         "rank-command-incorrect-format": "<@{}> command must be formatted like ``{}rank steamid``",
         "incorrect-steam-id": "<@{}> that SteamID is invalid!\nI only accept ``steamid64, steamid & steam3.``",
-        "no-stats-recorded": "<@{}> sorry ``{}`` has no stats recorded on our servers.",
         "kills": "Kills",
         "deaths": "Deaths",
         "assists": "Assists",
