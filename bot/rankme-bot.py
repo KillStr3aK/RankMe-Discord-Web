@@ -6,7 +6,6 @@ import aiohttp
 
 import discord
 from discord.ext import commands
-from discord.utils import get
 from discord.ext.commands import Bot
 
 with open("{}/config.json".format(os.path.dirname(os.path.realpath(__file__)))) as config_file:  
