@@ -77,45 +77,57 @@ if discord.version_info.major == 1:
                                 if cur.rowcount != 0:
                                     r = await cur.fetchall()
 
-                                    steamapi_session_object = aiohttp.ClientSession()
-                                    async with steamapi_session_object as steam_session:
-                                        async with steam_session.get("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={}&steamids={}".format(config["rankme"]["steam-api-key"], steam["converted"]["steamid64"])) as r_steam:
-                                            if r_steam.status == 200:
-                                                steam_api = await r_steam.json()
+                                    rounds_played = r[0][9] + r[0][10]
 
-                                                embed = discord.Embed(title="{}'s Profile".format(steam_api["response"]["players"][0]["personaname"]), colour=discord.Colour(0x0e9fed), url=config["rankme"]["stats-page-url"].format(steamid32))
-                                                embed.set_thumbnail(url=steam_api["response"]["players"][0]["avatarfull"])
+                                    if r[0][3] > 0 and r[0][4] > 0:
+                                        kdr = round(r[0][3] / r[0][4], 2)
+                                        hsp = round((r[0][8] / r[0][3])*100, 0)
+                                    else:
+                                        kdr = 0
+                                        hsp = 0
 
-                                                rounds_played = r[0][9] + r[0][10]
-
-                                                if r[0][3] > 0 and r[0][4] > 0:
-                                                    kdr = round(r[0][3] / r[0][4], 2)
-                                                    hsp = round((r[0][8] / r[0][3])*100, 0)
-                                                else:
-                                                    kdr = 0
-                                                    hsp = 0
-
-                                                if rounds_played > 0 and r[0][12] > 0:
-                                                    adr = round(r[0][12] / rounds_played, 2)
-                                                else:
-                                                    adr = 0
-
-                                                embed.add_field(name=translations[language]["kills"], value=r[0][3], inline=True)
-                                                embed.add_field(name=translations[language]["deaths"], value=r[0][4], inline=True)
-                                                embed.add_field(name=translations[language]["assists"], value=r[0][5], inline=True)
-                                                embed.add_field(name=translations[language]["headshots"], value=r[0][8], inline=True)
-                                                embed.add_field(name=translations[language]["kdr"], value=kdr, inline=True)
-                                                embed.add_field(name=translations[language]["hs-percentage"], value="{}%".format(hsp), inline=True)
-                                                embed.add_field(name=translations[language]["rounds-played"], value=rounds_played, inline=True)
-                                                embed.add_field(name=translations[language]["adr"], value=adr, inline=True)
-
-                                                await ctx.send(embed=embed)
-
-                                    steamapi_session_object.close
+                                    if rounds_played > 0 and r[0][12] > 0:
+                                        adr = round(r[0][12] / rounds_played, 2)
+                                    else:
+                                        adr = 0
+                                    
+                                    kills = r[0][3]
+                                    deaths = r[0][4]
+                                    assists = r[0][5]
+                                    headshots = r[0][8]
                                 else:
-                                    await ctx.send(translations[language]["no-stats-recorded"].format(ctx.author.id, steamid))
+                                    rounds_played = 0
+                                    kdr = 0
+                                    hsp = 0
+                                    adr = 0
+                                    kills = 0
+                                    deaths = 0
+                                    assists = 0
+                                    headshots = 0
 
+                                steamapi_session_object = aiohttp.ClientSession()
+                                async with steamapi_session_object as steam_session:
+                                    async with steam_session.get("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={}&steamids={}".format(config["rankme"]["steam-api-key"], steam["converted"]["steamid64"])) as r_steam:
+                                        if r_steam.status == 200:
+                                            steam_api = await r_steam.json()
+
+                                            embed = discord.Embed(title="{}'s Profile".format(steam_api["response"]["players"][0]["personaname"]), colour=discord.Colour(0x0e9fed), url=config["rankme"]["stats-page-url"].format(steamid32))
+                                            embed.set_thumbnail(url=steam_api["response"]["players"][0]["avatarfull"])
+
+                                            embed.add_field(name=translations[language]["kills"], value=kills, inline=True)
+                                            embed.add_field(name=translations[language]["deaths"], value=deaths, inline=True)
+                                            embed.add_field(name=translations[language]["assists"], value=assists, inline=True)
+                                            embed.add_field(name=translations[language]["headshots"], value=headshots, inline=True)
+                                            embed.add_field(name=translations[language]["kdr"], value=kdr, inline=True)
+                                            embed.add_field(name=translations[language]["hs-percentage"], value="{}%".format(hsp), inline=True)
+                                            embed.add_field(name=translations[language]["rounds-played"], value=rounds_played, inline=True)
+                                            embed.add_field(name=translations[language]["adr"], value=adr, inline=True)
+
+                                            await ctx.send(embed=embed)
+
+                                steamapi_session_object.close
                                 await cur.close()
+                                
             session_object.close
             conn.close()
         else:
