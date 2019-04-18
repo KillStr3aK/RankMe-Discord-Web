@@ -4,6 +4,7 @@ Another addition to Kento's amazing RankMe plugin. This discord bot stands out a
 ## Features
 - Top Players.
 - Individual user stats using any SteamID format.
+- Displays stats for players who haven't played on the server.
 - Featured web script.
 - Simple setup.
 
