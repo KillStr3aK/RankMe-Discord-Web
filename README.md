@@ -15,6 +15,8 @@ Another addition to Kento's amazing RankMe plugin. This discord bot stands out a
 ## Preview
 
 ### Discord Bot
+[Preview Video](https://youtu.be/GLjM0DgAkvw)
+
 ![bot preview 1](https://i.imgur.com/ZRktKLJ.png)
 ![bot preview 2](https://i.imgur.com/MmyRWFW.png)
 
