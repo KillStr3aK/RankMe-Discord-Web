@@ -40,8 +40,8 @@ dbname | Name of database.
 ```
 
 ### Finally
-- Upload bot files into VPS.
+- Upload bot files into the VPS.
 - Run ``screen -R rankme``
 - Then ``python3 rankme-bot.py``
-- Press ``ctrl a, d`` to exit screen.
+- Press ``ctrl a, d`` to exit the screen.
 - DONE!
