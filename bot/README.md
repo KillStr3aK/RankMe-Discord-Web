@@ -38,3 +38,10 @@ username | Username for database.
 password | Password for database.
 dbname | Name of database.
 ```
+
+### Finally
+- Upload bot files into VPS.
+- Run ``screen -R rankme``
+- Then ``python3 rankme-bot.py``
+- Press ``ctrl a, d`` to exit screen.
+- DONE!
