@@ -1,0 +1,24 @@
+{
+    "general": {
+        "language": "en",
+        "bot-token": "",
+        "prefix": "!",
+        "command-cooldown": 30,
+        "community-name": "DistrictNine.Host"
+    },
+    "rankme": {
+        "mysql": {
+            "servername": "",
+            "port": 3306,
+            "username": "",
+            "password": "",
+            "dbname": ""
+        },
+        "stats-page-url": "https://districtnine.host/dev/demos/rankme-discord/profile.php?id={}",
+        "steamid-uk-api-key": "",
+        "steam-api-key": "",
+        "table-name": "rankme",
+        "top-limit": 12,
+        "order-by": "score"
+    }
+}

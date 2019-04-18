@@ -1,0 +1,22 @@
+{
+    "_PLEASE_READ_THIS_": "If you make any translations or improvements please share them on https://github.com/DistrictNineHost/RankMe-Discord-Web",
+
+    "en": {
+        "connection-successful": "===========================================\nName: {0.user}\nCommunity: {1}\nDiscord.py version: {2}\nRankMe Bot version: {3}\n===========================================",
+        "wrong-version": "[ERROR] ==> This bot requires the discord.py rewrite, please install the correct version.\n\nYou are using: {}\nPlease install 1.0.1",
+        "command-cooldown": "<@{}> this command is on a {:.2f}s cooldown.",
+        "top-message-title": "__Top {} Players!__",
+        "top-message": "**Score:** {}\n**Kills:** {}\n**Deaths:** {}\n{}",
+        "rank-command-incorrect-format": "<@{}> command must be formatted like ``{}rank steamid``",
+        "incorrect-steam-id": "<@{}> that SteamID is invalid!\nI only accept ``steamid64, steamid & steam3.``",
+        "no-stats-recorded": "<@{}> sorry ``{}`` has no stats recorded on our servers.",
+        "kills": "Kills",
+        "deaths": "Deaths",
+        "assists": "Assists",
+        "headshots": "Headshots",
+        "kdr": "KDR",
+        "hs-percentage": "HS Percentage",
+        "rounds-played": "Rounds Played",
+        "adr": "ADR"
+    }
+}
