@@ -1,21 +1,19 @@
 {
-    "_PLEASE_READ_THIS_": "If you make any translations or improvements please share them on https://github.com/DistrictNineHost/RankMe-Discord-Web",
-
-    "en": {
-        "connection-successful": "===========================================\nName: {0.user}\nCommunity: {1}\nDiscord.py version: {2}\nRankMe Bot version: {3}\n===========================================",
-        "wrong-version": "[ERROR] ==> This bot requires the discord.py rewrite, please install the correct version.\n\nYou are using: {}\nPlease install 1.0.1",
+    "hu": {
+        "connection-successful": "===========================================\nJátékosnév: {0.user}\nKözösség: {1}\nDiscord.py verzió: {2}\nRankMe Bot verzió: {3}\n===========================================",
+        "wrong-version": "[HIBA] ==> Ennek a botnak szüksége van a legújabb discord.py-ra.\n\nJelenlegi verzió: {}\nTelepítsd fel a legújabbat: 1.0.1",
         "command-cooldown": "<@{}> this command is on a {:.2f}s cooldown.",
-        "top-message-title": "__Top {} Players!__",
-        "top-message": "**Score:** {}\n**Kills:** {}\n**Deaths:** {}\n{}",
-        "rank-command-incorrect-format": "<@{}> command must be formatted like ``{}rank steamid``",
-        "incorrect-steam-id": "<@{}> that SteamID is invalid!\nI only accept ``steamid64, steamid & steam3.``",
-        "kills": "Kills",
-        "deaths": "Deaths",
-        "assists": "Assists",
-        "headshots": "Headshots",
+        "top-message-title": "__TOP {} Játékosok!__",
+        "top-message": "**Pontok:** {}\n**Ölések:** {}\n**Halálok:** {}\n{}",
+        "rank-command-incorrect-format": "<@{}> Használat: ``{}rank steamid``",
+        "incorrect-steam-id": "<@{}> Érvénytelen SteamID!\nCsak ezeket fogadom el: ``steamid64, steamid & steam3.``",
+        "kills": "Ölések",
+        "deaths": "Halálok",
+        "assists": "Aszisztok",
+        "headshots": "Fejlövések",
         "kdr": "KDR",
-        "hs-percentage": "HS Percentage",
-        "rounds-played": "Rounds Played",
+        "hs-percentage": "Fejlövés százalék",
+        "rounds-played": "Lejátszott körök",
         "adr": "ADR"
     }
 }
