@@ -28,6 +28,8 @@ if discord.version_info.major == 1:
         if isinstance(error, commands.CommandOnCooldown):
             print(error.retry_after)
             await ctx.send(translations[language]["command-cooldown"].format(ctx.author.id, error.retry_after))
+        else:
+            print(error)
 
     @client.command()
     @commands.cooldown(1, config["general"]["command-cooldown"], commands.BucketType.user)
@@ -49,7 +51,7 @@ if discord.version_info.major == 1:
 
             await cur.close()
         
-        await conn.close()
+        conn.close()
 
     @client.command()
     @commands.cooldown(1, config["general"]["command-cooldown"], commands.BucketType.user)
@@ -128,7 +130,7 @@ if discord.version_info.major == 1:
                                 await cur.close()
                                 
             session_object.close
-            await conn.close()
+            conn.close()
         else:
             await ctx.send(translations[language]["rank-command-incorrect-format"].format(ctx.author.id, config["general"]["prefix"]))
 
